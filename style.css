@@ -1,0 +1,290 @@
+body{
+    margin:0;
+    padding:0;
+    background:#2c0a21;
+}
+body{
+    margin:0;
+    padding:0;
+    background:white;
+    
+
+}
+.container{
+    display:flex;
+    width:100%;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+.actions,.carousel{
+    height:80vh;
+    background:grey;
+    border-radius:5px;
+    width:25%;
+    transition:0.5s;
+}
+a{
+    float:right;
+    margin-right:5%;
+    text-decoration:none;
+    font-size:1.5vw;
+    transition:0.5s;
+    padding:1%;
+    border-radius:8px;
+    color:black;
+
+}
+a:hover{
+    letter-spacing:1.5px;
+    color:white;
+    box-shadow:inset 200px 0px 0px 0px #4bbb7d;
+
+}
+@keyframes expand{
+    from{
+        width:0%;
+    }
+    to{
+        width:25%;
+    }
+}
+.actions{
+    max-height:80vh;
+    overflow-y: auto;
+    animation-name:expand;
+    animation-duration:2s;
+    animation-fill-mode: forwards;
+}
+.actions label{
+    margin:auto;
+    background:white;
+    padding:2%;
+    border-radius:8px;
+}
+.hidden{
+    display:none;
+}
+.calculator{
+    box-shadow:2px 2px 10px 4px black;
+    border:1px solid black;
+    background:white;
+    position:relative;
+    top:20%;
+    width:40vw;
+    height:max-content;
+    padding:1%;
+    margin:auto;
+    border-radius:8px;
+
+}
+.screen{
+    background:#b7ebc1;
+    width:95%;
+    margin:auto;
+    height:10vh;
+    border-radius:8px;
+
+}
+.screen #input{
+    float:right;
+    font-family:VT323;
+    height:90%;
+    margin:auto;
+    font-size:4rem;
+    margin-right:2%;
+
+}
+.screen .buttons{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+}
+.buttons .row{
+    display:flex;
+    justify-content: space-evenly;
+    width:100%;
+    height:100%;
+    margin:1.5% 0 1.5% 0;
+}
+.row .light{
+    border-radius:40%;
+    border-width:0.5px;
+    height:100%;
+    width:5vw;
+    font-size:3vw;
+    background:white;
+    transition:0.5s;
+    z-index:99;
+    position:relative;
+    overflow: hidden;
+
+}
+.row .light:hover{
+    cursor:pointer;
+    border:1px solid white;
+    
+}
+.row .light::before{
+    content:'';
+    position:absolute;
+    width:95%;
+    height:95%;
+    background: white;
+
+    z-index: -1;
+    overflow: hidden;
+    border-radius:40%;
+    top:0;
+    left:0;
+    transition:0.5s;
+}
+@keyframes rotateto{
+    from{
+        transform:rotateZ(0deg);
+    }to{
+        transform:rotateZ(359deg);
+    }
+}
+.row .light::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(#fc03fc,blue);
+    z-index: -999;
+    border-radius:40%;
+    top:0%;
+    left:0%;
+    animation-name:rotateto;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
+.row .dark{
+    border-radius:40%;
+    border-width:0.5px;
+    height:100%;
+    width:5vw;
+    font-size:3vw;
+    background:grey;
+    transition:0.5s;
+    color:white;
+    position:relative;
+    z-index:99;
+    overflow:hidden;
+    
+
+}
+.row .dark:hover{
+    cursor:pointer;
+    background:orange;
+    color:white;
+    border:1px solid white;
+}
+.row .dark::before{
+    content:'';
+    position:absolute;
+    width:95%;
+    height:95%;
+    background: #333;
+
+    z-index: -1;
+    overflow: hidden;
+    border-radius:40%;
+    top:0;
+    left:0;
+    transition:0.5s;
+}
+.row .dark::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(yellow,goldenrod,orange);
+    z-index: -999;
+    border-radius:40%;
+    top:0%;
+    left:0%;
+    animation-name:rotateto;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+.row .spl{
+    border-radius:8px;
+    background:grey;
+    color:white;
+    border:none;
+    font-size:2vw;
+    transition:0.5s;
+    position:relative;
+    overflow:hidden;
+    z-index:0;
+}
+.row .spl:hover{
+    cursor:pointer;
+    background:indianred;
+}
+.row .spl::before{
+    content:'';
+    position:absolute;
+    width:95%;
+    height:95%;
+    background: grey;
+
+    z-index: -1;
+    overflow: hidden;
+    border-radius:6px;
+    top:0;
+    left:0;
+    transition:0.5s;
+}
+.row .spl::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(#fc2803,#ed8545,orange);
+    z-index: -999;
+    border-radius:6px;
+    top:0%;
+    left:0%;
+    animation-name:rotateto;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+.calculator #displaystr{
+    width:90%;
+    margin:2% 0 2% 0;
+
+}
+.controlpanel{
+    float:right;
+    padding:1%;
+    width:50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.controlpanel .lightc{
+    background:white;
+    border:0.1px solid black;
+    transition:0.5s;
+    border-radius:8px;
+    height:5vh;
+
+}
+.controlpanel .lightc:hover{
+    cursor:pointer;
+    box-shadow:inset 200px 0px 0px 0px gold;
+    color:black;
+    border:none;
+}
+
+

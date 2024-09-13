@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <label style="float: left; font-size: 3vw" id="name">Calcura</label>
+    <a href="index.html">About</a>
+    <div class="container">
+      <div class="actions hidden"></div>
+
+      <div class="calculator">
+        <div class="controlpanel">
+          <button class="lightc" id="theme">
+            <span class="fa fa-solid fa-moon"></span> Dark
+          </button>
+          <button class="lightc" id="history">
+            <span class="fa fa-solid fa-calendar"></span> History
+          </button>
+          <button class="lightc" id="analytics">
+            <span class="fa fa-solid fa-chart-simple"></span> Analytics
+          </button>
+        </div>
+        <center><input id="displaystr" /></center>
+        <div class="screen">
+          <label id="input">0</label>
+        </div>
+        <br />
+        <div class="buttons">
+          <div class="row">
+            <button class="spl" id="c">Clear</button>
+            <button class="spl" id="del">Del</button>
+          </div>
+          <div class="row">
+            <button class="spl" id="log">log10</button>
+            <button class="spl" id="exp">Exp</button>
+            <button class="spl" id="sin">Sin</button>
+            <button class="spl" id="cos">Cos</button>
+          </div>
+
+          <div class="row">
+            <button class="light" id="1">1</button>
+            <button class="light" id="2">2</button>
+            <button class="light" id="3">3</button>
+            <button class="light" id="+">+</button>
+          </div>
+          <div class="row">
+            <button class="light" id="4">4</button>
+            <button class="light" id="5">5</button>
+            <button class="light" id="6">6</button>
+            <button class="light" id="-">-</button>
+          </div>
+          <div class="row">
+            <button class="light" id="7">7</button>
+            <button class="light" id="8">8</button>
+            <button class="light" id="9">9</button>
+            <button class="light" id="*">*</button>
+          </div>
+          <div class="row">
+            <button class="light" id="0">0</button>
+            <button class="light" id=".">.</button>
+            <button class="light" id="=">=</button>
+            <button class="light" id="/">/</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    type="module"
+    src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"
+  ></script>
+  <script type="module" src="config.js"></script>
+  <script type="module" src="index.js"></script>
+</html>
